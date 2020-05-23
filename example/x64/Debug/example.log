@@ -1,0 +1,39 @@
+﻿  example.cpp
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(203,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(204,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(278,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(278,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(278,38): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(278,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(284,99): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(284,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(284,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(286,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(291,20): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(298,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(298,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(298,38): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(298,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(504,44): warning C4244: 'argument': conversion from 'double' to 'Sint16', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(504,33): warning C4244: 'argument': conversion from 'double' to 'Sint16', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(506,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(507,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(507,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(507,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(507,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(527,69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(527,59): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(527,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(527,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(538,64): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(538,59): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(538,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(538,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(569,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(570,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(572,76): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(572,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(572,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(572,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\example\example.cpp(572,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  example.vcxproj -> C:\Users\lab716\Downloads\Course02_Students (2)\02_SDL2_DrawingFunction\Example\x64\Debug\example.exe
