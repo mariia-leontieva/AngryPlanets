@@ -52,7 +52,7 @@ typedef struct {
 	double opaq;
 } planet;
 
-typedef struct {
+/*typedef struct {
 	int n;
 	double M;
 	planet planets[100];
@@ -65,14 +65,13 @@ typedef struct {
 	double velx;
 	double vely;
 	double angvel;
-}cluster;
+}cluster;*/
 
 typedef struct {
 	double m;
 	double r;
 	double x;
 	double y;
-	//int rings;
 	float ring[5];
 	float opaq[5];
 }blackHole;
@@ -105,11 +104,11 @@ void drawBlackHole(blackHole h, backColor c);
 void drawBlackHoleRings(blackHole *h, backColor c);
 //void drawCluster(cluster cluster1, backColor c);
 
-void movePlanet(planet* p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize, cluster *c);
+void movePlanet(planet* p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize);
 //void collide (planet* p1, planet *p2);
 void drawPull(planet planet1, int pullx, int pully, backColor c);
-void drawTrajectory(planet p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize, cluster c, int pullx, int pully);
-void makeTrajectory(planet* p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize, cluster c);
+void drawTrajectory(planet p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize, int pullx, int pully);
+void makeTrajectory(planet* p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize);
 void drawTale(planet p);
 void taleUpdate(planet* p);
 void drawFinalTrajectory(planet p);
@@ -219,7 +218,7 @@ void resetPlanet(planet* planet1)
 	//planet1->tcol[1] = colors[rand() % 8];
 }
 
-void resetCluster(cluster* c) {
+/*void resetCluster(cluster* c) {
 	c->n = 0;
 	c->M = 0;
 	//planet planets[100];
@@ -236,9 +235,9 @@ void resetCluster(cluster* c) {
 	//double angvel;
 	c->velx = 0;
 	c->vely = 0;
-}
+}*/
 
-void initCluster(planet *p1, planet *p2, cluster *c) {
+/*void initCluster(planet *p1, planet *p2, cluster *c) {
 	c->n = 2;
 	c->planets[0] = *p1;
 	c->planets[0] = *p2;
@@ -254,9 +253,9 @@ void initCluster(planet *p1, planet *p2, cluster *c) {
 	//int angvel;
 	p1->inCluster = true;
 	p2->inCluster = true;
-}
+}*/
 
-void addToCluster(planet* p, cluster *c) {
+/*void addToCluster(planet* p, cluster *c) {
 	c->n++;
 	c->planets[c->n - 1] = *p;
 	c->centerX = (c->centerX * c->M + p->m * p->x) / (p->m + c->M);
@@ -271,7 +270,7 @@ void addToCluster(planet* p, cluster *c) {
 	//int angvel;
 	p->inCluster = true;
 	//p->cNum = cNum;
-}
+}*/
 
 void drawBlackHole(blackHole h, backColor c)
 {
@@ -298,11 +297,11 @@ void drawPlanet(planet p, backColor c)
 	aaFilledEllipseRGBA(renderer, p.x, p.y, p.r, p.r, 255-c, 255-c, 255-c, 255);
 }
 
-void drawCluster(cluster c, backColor col) {
+/*void drawCluster(cluster c, backColor col) {
 	for (int i = 0; i < c.n; i++)
 			if (c.planets[i].exists)
 				drawPlanet(c.planets[i], col);
-}
+}*/
 
 /*void collide(planet* p1, planet* p2) {
 	float v1 = p1->velx * p1->velx + p1->vely * p1->vely;
@@ -387,7 +386,7 @@ void drawCluster(cluster c, backColor col) {
 	}
 }*/
 
-void movePlanet(planet* p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize, cluster * c)
+void movePlanet(planet* p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize)
 {
 	double distance, sqdistance, a;
 	double ax = 0, ay = 0;
@@ -408,7 +407,7 @@ void movePlanet(planet* p, int pNum, blackHole holes[], int hSize, planet planet
 	if (p->exists) {
 		//force of clusters
 
-		//for (int i = 0; i <= *cSize; i++) {
+		/*for (int i = 0; i <= *cSize; i++) {
 			double csqdistance = (p->x - c->centerX) * (p->x - c->centerX) + (p->y - c->centerX) * (p->y - c->centerX);
 			double ca = c->M / (csqdistance)*K;
 			double cdistance = sqrt(csqdistance);
@@ -421,7 +420,7 @@ void movePlanet(planet* p, int pNum, blackHole holes[], int hSize, planet planet
 			if (p->inCluster == false) {
 				ax += ca * (c->centerX - p->x) / cdistance;
 				ay += ca * (c->centerY - p->y) / cdistance;
-			}
+			}*/
 		//}
 		//force of free planets
 		for (int i = 0; i <= pSize; i++) {
@@ -429,10 +428,10 @@ void movePlanet(planet* p, int pNum, blackHole holes[], int hSize, planet planet
 				double psqdistance = (p->x - planets[i].x) * (p->x - planets[i].x) + (p->y - planets[i].y) * (p->y - planets[i].y);
 				double pa = planets[i].m / (psqdistance)*K;
 				double pdistance = sqrt(psqdistance);
-				if (pdistance <= (p->r + planets[i].r)) {
-					initCluster(p, &planets[i], c);
+				//if (pdistance <= (p->r + planets[i].r)) {
+				//	initCluster(p, &planets[i], c);
 					//addToCluster();
-				}
+				//}
 				if (pdistance > (p->r + planets[i].r)) {
 					ax += pa * (planets[i].x - p->x) / pdistance;
 					ay += pa * (planets[i].y - p->y) / pdistance;
@@ -507,7 +506,7 @@ void drawPull(planet planet1, int pullx, int pully, backColor c)
 	aaFilledEllipseRGBA(renderer, pullx, pully, r, r, 255 - c, 255 - c, 255 - c, 255);
 }
 
-void drawTrajectory(planet p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize, cluster c, int pullx, int pully) {
+void drawTrajectory(planet p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize, int pullx, int pully) {
 	planet protot = p;
 	protot.r = p.r / 4;
 	//cluster protocl=c;
@@ -523,7 +522,7 @@ void drawTrajectory(planet p, int pNum, blackHole holes[], int hSize, planet pla
 		//}
 		//cluster protoclusters[1];
 		//int protos = 0;
-		movePlanet(&protot, pNum, holes, hSize, planets, pSize, &c);
+		movePlanet(&protot, pNum, holes, hSize, planets, pSize);
 		aaFilledEllipseRGBA(renderer, protot.x, protot.y, protot.r, protot.r, 0, 255, 0, opacity);
 		opacity--;
 	}
@@ -553,13 +552,13 @@ void taleUpdate(planet* p) {
 	p->tale.y[0] = p->y;
 }
 
-void makeTrajectory(planet* p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize, cluster c) {
+void makeTrajectory(planet* p, int pNum, blackHole holes[], int hSize, planet planets[], int pSize) {
 	planet protot = *p;
 	p->trag.size = 200;
 	//cluster protocl = c;
 
 	for (int i = 0; i < p->trag.size; i++) {
-		movePlanet(&protot, pNum, holes, hSize, planets, pSize, &c);
+		movePlanet(&protot, pNum, holes, hSize, planets, pSize);
 		p->trag.x[i] = protot.x;
 		p->trag.y[i] = protot.y;
 	}
@@ -578,13 +577,12 @@ void drawFinalTrajectory(planet p) {
 // int main() and void main() are not allowed
 int main(int argc, char* args[])
 {
-	//char imgPath2[100] = "../images/space.jpg";	
-	// Start up SDL and create window
 	if (initSDL())
 	{
 		printf("Failed to initialize SDL!\n");
 		return -1;
 	}
+	//printf("test\n");
 	backColor c = BLACK;
 	blackHole holes[100];
 	//int hSize = 2;
@@ -598,12 +596,12 @@ int main(int argc, char* args[])
 	//holes[1].x = WIDTH * 2 / 3;
 	//holes[1].y = HEIGHT / 2;
 	planet planets[100];
-	int pSize = 0;//total amount of planets+1=no. of planet that is about to be launched
+	int pSize = 0;
 	for (int i = 0; i <= pSize; i++)
 		resetPlanet(&planets[i]);
 	
-	cluster cluster1;
-	resetCluster(&cluster1);
+	//cluster cluster1;
+	//resetCluster(&cluster1);
 	/*cluster clusters[10];
 	int cSize = 0;
 	for (int i = 0; i < cSize; i++) {
@@ -653,7 +651,7 @@ int main(int argc, char* args[])
 			//SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 			planets[pSize].velx = (planets[pSize].x - pullx) / 10;
 			planets[pSize].vely = -(pully - planets[pSize].y) / 10;
-			makeTrajectory(&planets[pSize], pSize, holes, hSize, planets, pSize, cluster1);
+			makeTrajectory(&planets[pSize], pSize, holes, hSize, planets, pSize);
 			planets[pSize].tale.size = 1;
 			planets[pSize].tale.x[0] = planets[pSize].x;
 			planets[pSize].tale.y[0] = planets[pSize].y;
@@ -672,7 +670,7 @@ int main(int argc, char* args[])
 		}
 		for (int i = 0; i <= pSize; i++) {
 			if (planets[i].move == true && planets[i].exists) {
-				movePlanet(&planets[i], i, holes, hSize, planets, pSize, &cluster1);
+				movePlanet(&planets[i], i, holes, hSize, planets, pSize);
 				drawFinalTrajectory(planets[i]);
 				drawTale(planets[i]);
 				if (planets[i].tale.size < 100) {
@@ -684,20 +682,13 @@ int main(int argc, char* args[])
 
 			if (planets[i].move == false && planets[i].exists) {
 				drawPull(planets[i], pullx, pully, c);
-				drawTrajectory(planets[i], i, holes,hSize, planets, pSize, cluster1, pullx, pully);
+				drawTrajectory(planets[i], i, holes,hSize, planets, pSize, pullx, pully);
 			}
 			//draw everything
 			if (planets[i].exists) {
 				drawPlanet(planets[i], c);
 			}
 		}
-		if (cluster1.n > 0)
-			drawCluster(cluster1, c);
-
-		/*for (int i = 0; i <= cSize; i++) {
-			drawCluster(clusters[i], c);
-		}*/
-
 		for (int i = 0; i < hSize; i++) {
 			drawBlackHole(holes[i], c);
 		}
